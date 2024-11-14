@@ -26,7 +26,21 @@ public class AboutMethods {
      * 
      */
     public static void computeAgeIn5And10And20YearsConsole() {
-
+System.out.println("What is your age?");
+String ageText=readLine();
+int ageNumber = Integer.parseInt(ageText);
+int futureAge=ageNumber+5;
+System.out.println("In 5 years from now, you will be "+futureAge+".");
+System.out.println("What is your age?");
+ageText=readLine();
+ageNumber = Integer.parseInt(ageText);
+futureAge=ageNumber+10;
+System.out.println("In 10 years from now, you will be "+futureAge+".");
+System.out.println("What is your age?");
+ageText=readLine();
+ageNumber = Integer.parseInt(ageText);
+futureAge=ageNumber+20;
+System.out.println("In 20 years from now, you will be "+futureAge+".");
     }
 
     /**
@@ -115,8 +129,19 @@ public class AboutMethods {
      * In 20 years from now, you will be [The new age entered above + 20 years].
      * 
      */
+    public static void getAge(String ageText, int years){
+        System.out.println("What is your age?");
+        ageText=readLine();
+        int ageNumber = Integer.parseInt(ageText);
+        int futureAge=ageNumber+years;
+        System.out.println("In "+years+" years from now, you will be "+futureAge+".");
+    }
     public static void computeAgeIn5And10And20YearsConsoleWithMethod() {
-
+        String ageText;
+        int years;
+        getAge(null, years=5);
+        getAge(null, years=10);
+        getAge(null, years=20);
     }
 
     /**
@@ -176,7 +201,7 @@ public class AboutMethods {
      * 
      */
     public static int square(int number) {
-        return 0;
+        return number*number;
     }    
 
     
@@ -197,8 +222,9 @@ public class AboutMethods {
      * opposite(-5) should return 5
      * 
      */
-
-
+    public static int opposite(int number) {
+        return number*-1;
+    }    
     /**
      * # Helping a farmer
      * 
@@ -212,4 +238,10 @@ public class AboutMethods {
      * legs(2, 3, 4) should return 32
      * 
      */
+        public static int legs(int chickenCount, int pigCount, int cowCount) {
+            int chickenlegs=chickenCount*2;
+            int piglegs=pigCount*4;
+            int cowlegs=cowCount*4;
+            return chickenlegs+piglegs+cowlegs;
+    }    
 }

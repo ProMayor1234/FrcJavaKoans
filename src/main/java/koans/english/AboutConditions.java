@@ -66,7 +66,13 @@ public class AboutConditions {
      * sign(2) should return "positive"
      * 
      */
-
+    public static String sign(int number){
+               if (number >= 0) {
+              return "positive"; 
+          } else {
+              return "negative";
+          }   
+    }
 
     /**
      * # Else if construct
@@ -97,7 +103,17 @@ public class AboutConditions {
      * signOrZero(0) should return "zero"
      * 
      */
-
+        public static String signOrZero(int number){
+            if (number > 0) {
+              return "positive"; 
+          }   
+          else if (number == 0) {
+            return "zero";
+          } 
+          else {
+              return "negative";
+          }   
+    }
 
     /**
      * # An exam's grade
@@ -129,4 +145,21 @@ public class AboutConditions {
      * gradeComment(0) should return "Oops!"
      * 
      */    
+            public static String gradeComment(int grade){
+            if ((grade < 0)|| (grade > 100)) {
+              return "You cheat!"; 
+          }   
+          else if (grade == 100) {
+            return "Congratulations! You got everything right!";
+          } 
+          else if (grade == 0) {
+            return "Oops!";
+          } 
+          else if ((grade > 0) && (grade<60)) {
+            return "You failed!";
+          } 
+          else {
+              return "Congratulations! You pass!";
+          }   
+    }
 }
