@@ -13,7 +13,14 @@ public class AboutMoreMethods {
      * abs(-2) should return 2
      * 
      */
-
+    public static int abs (int num){
+        if (num>=0){
+            return num;
+        }
+        else{
+            return num*-1;
+        }
+    }
 
      /**
      * # What's the min value?
@@ -27,7 +34,14 @@ public class AboutMoreMethods {
      * min(4, 3) should return 3
      * 
      */
-
+    public static int min(int num1, int num2){
+        if(num1>num2){
+            return num2;
+        }
+        else{
+            return num1;
+        }
+    }
 
      /**
      * # Computing the remainder of an integer division
@@ -55,7 +69,9 @@ public class AboutMoreMethods {
      * remainder(17, 5) should return 2
      * 
      */
-
+    public static int remainder(int dividend, int divisor){
+        return dividend%divisor;
+    }
 
     /**
      * # Computing whether a number is even or not
@@ -85,7 +101,14 @@ public class AboutMoreMethods {
      * isEven(5) should return false
      * 
      */
-
+    public static boolean isEven(int num) {
+        if(num%2==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
      
     /**
      * # Computing whether a number is a multiple of another
