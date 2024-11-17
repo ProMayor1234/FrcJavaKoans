@@ -154,19 +154,18 @@ public class AboutMoreMethods {
      * Buzz
      * 
      */ 
-    public static String fizzBuzz(int multiple) {
+    public static void fizzBuzz(int multiple) {
         if(multiple%3==0&&multiple%5==0){
-            return "FizzBuzz";
+            System.out.println("FizzBuzz");
         }
         else if(multiple%3==0){
-            return "Fizz";
+            System.out.println("Fizz");
         }
         else if(multiple%5==0){
-            return "Buzz";
+            System.out.println("Buzz");
         }
         else{
-            String multipleText = String.valueOf(multiple);
-                return multipleText;
+            System.out.println(multiple);
         }
     }
 }
