@@ -125,10 +125,14 @@ public class AboutMoreMethods {
      * Expected result:
      * 
      * isMultiple(15, 5) should return true
-     * 
-     */
-
-     
+     */ public static boolean isMultiple(int dividend, int divisor) {
+        if(dividend%divisor==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     /**
      * # Fizz Buzz
      * 
@@ -150,5 +154,19 @@ public class AboutMoreMethods {
      * Buzz
      * 
      */ 
-      
+    public static String fizzBuzz(int multiple) {
+        if(multiple%3==0&&multiple%5==0){
+            return "FizzBuzz";
+        }
+        else if(multiple%3==0){
+            return "Fizz";
+        }
+        else if(multiple%5==0){
+            return "Buzz";
+        }
+        else{
+            String multipleText = String.valueOf(multiple);
+                return multipleText;
+        }
+    }
 }
