@@ -23,7 +23,9 @@ public class AboutDecimalNumbers {
      * toCm(2.0) should return 5.08
      * 
      */
-
+    public static double toCm(double in){
+        return in*2.54;
+    }
 
     /**
      * # Converting the other way
@@ -37,7 +39,9 @@ public class AboutDecimalNumbers {
      * toInches(5.08) should return 2.0
      * 
      */
-
+    public static double toInches(double cm){
+        return cm/2.54;
+    }
 
     /**
      * # Computing some geometry
@@ -51,7 +55,9 @@ public class AboutDecimalNumbers {
      * rectangleArea(3.6, 2.0) should return 7.2
      * 
      */
-
+    public static double rectangleArea(double length, double width){
+        return length*width;
+    }
 
      /**
      * # Computing how long a robot is traveling step 1
@@ -69,7 +75,9 @@ public class AboutDecimalNumbers {
      * wheelCircumference(1) should return 6.28
      * 
      */
-
+    public static double wheelCircumference(double radius){
+        return 2*3.14*radius;
+    }
 
     /**
      * # Computing how long a robot is traveling step 2
@@ -88,7 +96,9 @@ public class AboutDecimalNumbers {
      * wheelRotations(2.0, 0.2) should return 0.4
      * 
      */
-
+    public static double wheelRotations(double motor, double ratio){
+        return motor*ratio;
+    }
 
     /**
      * # Computing how long a robot is traveling final step
@@ -108,6 +118,9 @@ public class AboutDecimalNumbers {
      * toDistance(10.0, 0.2, 2.0) should return 25.12
      * 
      */
-
+    public static double toDistance(double motor, double ratio, double radius){
+        double circumference=2*3.14*radius;
+        return motor*ratio*circumference;
+    }
      
 }

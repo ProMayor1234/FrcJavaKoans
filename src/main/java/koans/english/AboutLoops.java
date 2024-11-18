@@ -32,7 +32,12 @@ public class AboutLoops {
      * Hello
      * 
      */
-
+    public static void helloNTimes(int times){
+        while (times>0) {
+        System.out.println("Hello");
+        times=times-1;
+        }
+    }
 
      /**
      * # Printing where we are in a loop
@@ -50,7 +55,13 @@ public class AboutLoops {
      * 3
      * 
      */
-
+    public static void displayNumbers(int n){
+        int num1=1;
+        while(num1<=n){
+            System.out.println(num1);
+            num1=num1+1;
+        }
+    }
 
      /**
      * # Counting in reverse
