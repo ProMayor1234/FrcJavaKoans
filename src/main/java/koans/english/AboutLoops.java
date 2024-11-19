@@ -79,7 +79,12 @@ public class AboutLoops {
      * 1
      * 
      */
-
+    public static void displayReverseNumbers(int n){
+        while (n>0){
+            System.out.println(n);
+            n=n-1;
+        }
+    }
 
      /**
      * # Multiples of 7
@@ -98,7 +103,13 @@ public class AboutLoops {
      * 28
      * 
      */
-
+    public static void sevens(int n){
+        int num1=7;
+        while(num1<=n){
+            System.out.println(num1);
+            num1=num1+7;
+        }
+    }
 
      /**
      * # Multiples of 7 or 8
