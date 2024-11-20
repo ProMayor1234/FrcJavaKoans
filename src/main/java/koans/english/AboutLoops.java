@@ -228,6 +228,14 @@ public class AboutLoops {
      * factorial(5) should return 120
      * 
      */
-
+    public static int factorial(int n){
+        int x=1;
+        int num=1;
+        while(x<=n){
+            num=num*x;
+            x++;
+        }
+        return num;
+    }
 
 }
