@@ -135,8 +135,20 @@ public class AboutLoops {
      * 14
      * 16
      * 
-     */
-
+     */ public static void sevensOrEights(int n){
+        int num1=1;
+        while(num1<=n){
+            if(num1%7==0){
+            System.out.println(num1);
+            }
+            else if(num1%8==0){
+                System.out.println(num1);
+                }
+            else{
+            }
+            num1=num1+1;
+        }
+    }
 
      /**
      * # Exponents
@@ -155,9 +167,16 @@ public class AboutLoops {
      * Expected result:
      * 
      * exponent(5, 3) should return 125
-     * 
      */
-
+    public static int exponent (int x, int n){
+        int num1=1;
+        int num2=1;
+        while(num1<=n){
+            num2=num2*x;
+            num1=num1+1;
+        }
+        return num2;
+    }
 
      /**
      * # Exponents, including 0
@@ -177,7 +196,18 @@ public class AboutLoops {
      * exponent2(5, 3) should return 125
      * 
      */
-
+    public static int exponent2 (int x, int n){
+        int num1=1;
+        int num2=1;
+        while(num1==0){
+            return 1;
+        }
+        while(num1<=n){
+            num2=num2*x;
+            num1=num1+1;
+        }
+        return num2;
+    }
 
      /**
      * # Factorial
