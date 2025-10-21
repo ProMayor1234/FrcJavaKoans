@@ -24,7 +24,6 @@ public class AboutMethodsKoans {
 
     public static final List<Koan> koans = List.of(
         new Koan(CLASS, REPETITIVE_TASKS)
-            .useConsole()
             .beforeFirstTest(
                 assertKoanMethodIsInvokable("computeAgeIn5And10And20YearsConsole")
             )
@@ -41,14 +40,41 @@ public class AboutMethodsKoans {
                 assertAskedInStdIn(),
                 assertNextStdOutLineEquals(IN_20_YEARS_YOU_WILL_BE, addToStdInInput(2, 20)),
                 assertNoMoreLineInStdOut()
+            )
+            .when(callKoanMethod("computeAgeIn5And10And20YearsConsole"))
+            .withStdInInputs("13", "8", "12")
+            .then(
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_5_YEARS_YOU_WILL_BE, addToStdInInput(0, 5)),
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_10_YEARS_YOU_WILL_BE, addToStdInInput(1, 10)),
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_20_YEARS_YOU_WILL_BE, addToStdInInput(2, 20)),
+                assertNoMoreLineInStdOut()
             ),
         new Koan(CLASS, REPETITIVE_TASKS_METHODS_TO_THE_RESCUE)
-            .useConsole()
             .beforeFirstTest(
                 assertKoanMethodIsInvokable("computeAgeIn5And10And20YearsConsoleWithMethod")
             )
             .when(callKoanMethod("computeAgeIn5And10And20YearsConsoleWithMethod"))
             .withStdInInputs("14", "6", "10")
+            .then(
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_5_YEARS_YOU_WILL_BE, addToStdInInput(0, 5)),
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_10_YEARS_YOU_WILL_BE, addToStdInInput(1, 10)),
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_20_YEARS_YOU_WILL_BE, addToStdInInput(2, 20)),
+                assertNoMoreLineInStdOut()
+            )
+            .when(callKoanMethod("computeAgeIn5And10And20YearsConsoleWithMethod"))
+            .withStdInInputs("12", "10", "16")
             .then(
                 assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
                 assertAskedInStdIn(),

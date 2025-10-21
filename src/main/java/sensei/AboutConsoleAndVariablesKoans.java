@@ -63,7 +63,6 @@ public class AboutConsoleAndVariablesKoans {
                 assertNoMoreLineInStdOut()
             ),
         new Koan(CLASS, ASKING_FOR_SOME_USER_ANSWER)
-            .useConsole()
             .beforeFirstTest(
                 assertKoanMethodIsInvokable("askAndDisplayNameInConsole")
             )
@@ -75,9 +74,17 @@ public class AboutConsoleAndVariablesKoans {
                 assertNextStdOutLineEquals(YOUR_NAME_IS),
                 assertNextStdOutLineEquals(global("%s"), stdInInput(0)),
                 assertNoMoreLineInStdOut()
+            )
+            .when(callKoanMethod("askAndDisplayNameInConsole"))
+            .withStdInInputs("Romeo")
+            .then(
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_NAME),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(YOUR_NAME_IS),
+                assertNextStdOutLineEquals(global("%s"), stdInInput(0)),
+                assertNoMoreLineInStdOut()
             ),
         new Koan(CLASS, PLAY_WITH_TEXT_CONTENT)
-            .useConsole()
             .beforeFirstTest(
                 assertKoanMethodIsInvokable("askAndDisplayNameOnASingleLineInConsole")
             )
@@ -88,9 +95,16 @@ public class AboutConsoleAndVariablesKoans {
                 assertAskedInStdIn(),
                 assertNextStdOutLineEquals(YOUR_NAME_IS_SINGLE_LINE, stdInInput(0)),
                 assertNoMoreLineInStdOut()
+            )
+            .when(callKoanMethod("askAndDisplayNameOnASingleLineInConsole"))
+            .withStdInInputs("Romeo")
+            .then(
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_NAME),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(YOUR_NAME_IS_SINGLE_LINE, stdInInput(0)),
+                assertNoMoreLineInStdOut()
             ),
         new Koan(CLASS, PLAYING_MORE_WITH_TEXT_CONTENT)
-            .useConsole()
             .beforeFirstTest(
                 assertKoanMethodIsInvokable("askNameAndAgeInConsole")
             )
@@ -103,14 +117,31 @@ public class AboutConsoleAndVariablesKoans {
                 assertAskedInStdIn(),
                 assertNextStdOutLineEquals(YOUR_NAME_IS_AND_YOUR_AGE_IS, stdInInput(0), stdInInput(1)),
                 assertNoMoreLineInStdOut()
+            )
+            .when(callKoanMethod("askNameAndAgeInConsole"))
+            .withStdInInputs("Romeo", "15")
+            .then(
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_NAME),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(YOUR_NAME_IS_AND_YOUR_AGE_IS, stdInInput(0), stdInInput(1)),
+                assertNoMoreLineInStdOut()
             ),
         new Koan(CLASS, PLAYING_WITH_TEXT_AND_NUMBERS_AT_THE_SAME_TIME)
-            .useConsole()
             .beforeFirstTest(
                 assertKoanMethodIsInvokable("computeAgeIn5YearsConsole")
             )
             .when(callKoanMethod("computeAgeIn5YearsConsole"))
             .withStdInInputs("14")
+            .then(
+                assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
+                assertAskedInStdIn(),
+                assertNextStdOutLineEquals(IN_5_YEARS_YOU_WILL_BE, addToStdInInput(0, 5)),
+                assertNoMoreLineInStdOut()
+            )
+            .when(callKoanMethod("computeAgeIn5YearsConsole"))
+            .withStdInInputs("16")
             .then(
                 assertNextStdOutLineEquals(WHAT_IS_YOUR_AGE),
                 assertAskedInStdIn(),
